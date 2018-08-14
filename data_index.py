@@ -26,6 +26,22 @@ def search(indexer, searchTerm, searchColumns):
 			result[3].append(line['Location'])
 		return result
 
+def searchh(indexer, searchTerm):
+	with indexer.searcher() as searcher:
+		words = ['Access_Name']
+		query = MultifieldParser(words, schema=indexer.schema).parse(searchTerm)
+		results = searcher.search(query)
+		print("\nLength of results: " + str(len(results)) + '\n')
+		result = []
+		scm = ['Access_Name', 'URL', 'imgURL', 'County', 'Type', 'Location', 'Access_Type', 'Path_to_Beach', 'Managed_by']
+		scm = scm + ['Parking', 'Fee', 'Bathrooms', 'Handicap_Access', 'Running_Water', 'Showers', 'Camp_Sites', 'Stairs_to_Beach', 'Boat_Ramps', 'Tidepooling']
+		scm = scm + ['Surfing', 'Hiking', 'Bicycling', 'Horseback_Riding', 'Road_Vehicle_Access', 'Whale_Watching']
+
+		for x in scm:
+			result.append(results[0][x])
+
+		return result
+
 def index():
 
 	if(os.path.isdir("indexdir")):
@@ -66,9 +82,10 @@ def main():
 	dx = index()
 	searchColumns = ["Access_Name", "URL"]		#search attributions
 	#dx = open_dir("indexdir")		#keep data in local folder
-	results = search(dx, searchTerm, searchColumns)
-	for x in results:
-		print(x)
+	results = searchh(dx, "Park")
+	print(results)
+	#for x in results:
+	#	print(x)
 
 
 

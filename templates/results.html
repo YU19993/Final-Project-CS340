@@ -11,23 +11,28 @@
 		<h2>
 			<div id='redText'>You searched for: </div> {{query}}
 		</h2>
-		<main class="twit-container">
-		{% for Access_Name, County, Type, Location in results %}
-			<article class="twit">
-				<div class="twit-content">
-					<p class="twit-text">
-						Access Name: {{Access_Name}}
-					</p>
-					<p class="twit-text">
-						County: {{County}}
-					</p>
-					<p class="twit-text">
-						Type: {{Type}}
-					</p>
-					<p class="twit-text">
-						Location: {{Location}}
-					</p>
+
+				<main class="twit-container" >
+					{% for Access_Name, County, Type, Location in results %}
+					<article class="twit" >
+						<form method="get" action="{{ url_for('detial') }}">
+							<input type="hidden" name="More_Detial"  value="{{Access_Name}}" visibility="hidden">
+						<div class="twit-content" >
+							<p class="twit-text">
+								Access Name: {{Access_Name}}
+							</p>
+							<p class="twit-text">
+								County: {{County}}
+							</p>
+							<p class="twit-text">
+								Type: {{Type}}
+							</p>
+							<p class="twit-text">
+								Location: {{Location}}
+							</p>
+							<input type="submit" value="More" />
 				</div>
+			</form>
 			</article>
 		{% endfor %}
 		</main>
