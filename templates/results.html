@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<link rel="stylesheet" href= "{{ url_for('static',filename='styles/main.css') }}">
+		<title>Results</title>
+	</head>
+
+	<body>
+
+		<h2>
+			<div id='redText'>You searched for: </div> {{query}}
+		</h2>
+		<main class="twit-container">
+		{% for Access_Name, County, Type, Location in results %}
+			<article class="twit">
+				<div class="twit-content">
+					<p class="twit-text">
+						Access Name: {{Access_Name}}
+					</p>
+					<p class="twit-text">
+						County: {{County}}
+					</p>
+					<p class="twit-text">
+						Type: {{Type}}
+					</p>
+					<p class="twit-text">
+						Location: {{Location}}
+					</p>
+				</div>
+			</article>
+		{% endfor %}
+		</main>
+		<form method="post" action="{{ url_for('index') }}">
+			<input type="submit" value="Return" />
+		</form>
+	</body>
+</html>

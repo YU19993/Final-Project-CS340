@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<link rel="stylesheet" href= "{{ url_for('static',filename='styles/main.css') }}">
+		<title>Welcome to the sample!!</title>
+	</head>
+
+	<body>
+		<form method="get" action="{{ url_for('results') }}">
+			<label for="searchterm">What do you want to search for:</label>
+
+			<select type="text" name="searchterm">
+        <option selected="selected" value="Access_Name">Beach</option>
+        <option value ="Access_Name" >Access Name</option>
+				<option value ="County">County</option>
+				<option value ="Type">Type</option>
+				<option value ="Location">Location</option>
+    	</select>
+			<input type="text" name='searchitem'/>
+			<input type="submit" value="Search" />
+		</form>
+
+		<a href="/my-link/">Hello World</a>
+	</body>
+</html>
