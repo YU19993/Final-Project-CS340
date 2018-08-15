@@ -17,7 +17,7 @@ def search(indexer, searchTerm, searchColumns):
 	with indexer.searcher() as searcher:
 		words = searchColumns
 		query = MultifieldParser(words, schema=indexer.schema).parse(searchTerm)
-		results = searcher.search(query)
+		results = searcher.search(query, limit=None)
 		print("\nLength of results: " + str(len(results)) + '\n')
 		result=[[],[],[],[]]
 		for line in results:
@@ -51,6 +51,14 @@ def index():
 	print("Someone is at the home page.")
 	return render_template('welcome_page.html')
 
+@app.route('/about/', methods=['GET', 'POST'])
+def about():
+	return render_template('about.html')
+
+@app.route('/contact/', methods=['GET', 'POST'])
+def contact():
+	return render_template('contact.html')
+
 @app.route('/my-link/')
 def my_link():
 	print('I got clicked!')
@@ -74,7 +82,10 @@ def results():
 	result = search(dx, searchTerm, searchColumns)
 	for x in result:
 		print(x)
-	return render_template('results.html', query=query2, results=zip(result[0], result[1], result[2], result[3]))
+	if(len(result[0]) == 0):
+		return render_template('not_found.html')
+	else:
+		return render_template('results.html', query=query2, results=zip(result[0], result[1], result[2], result[3]))
 
 
 @app.route('/detial/', methods=['GET', 'POST'])
@@ -89,7 +100,7 @@ def detial():
 	result = searchh(dx,str(query))
 	print(result)
 	print("\nThis page privide more detial about the search.\n")
-	return render_template('detial.html', r0=result[0], r1=result[1], r2=result[2], r3=result[3], r4=result[4], r5=result[5], r6=result[6], r7=result[7],r8=result[8], r9=result[9], r10=result[10],r11=result[11], r12=result[12], r13=result[13], r14=result[14], r15=result[15], r16=result[16], r17=result[17], r18=result[18], r19=result[19], r20=result[20], r21=result[21], r22=result[22], r23=result[23],r24=result[24])
+	return render_template('detial.html', r0=result[0], r3=result[3], r4=result[4], r5=result[5], r6=result[6], r7=result[7],r8=result[8], r9=result[9], r10=result[10],r11=result[11], r12=result[12], r13=result[13], r14=result[14], r15=result[15], r16=result[16], r17=result[17], r18=result[18], r19=result[19], r20=result[20], r21=result[21], r22=result[22], r23=result[23],r24=result[24])
 	#return render_template('detial.html')
 if __name__ == '__main__':
 	app.run(debug=True)

@@ -7,12 +7,20 @@
 	</head>
 
 	<body>
-
-		<h2>
-			<div id='redText'>You searched for: </div> {{query}}
+		<div id="header">
+			<ul>
+	      <li><a href="/contact/">Contact</a></li>
+	      <li><a href="/about/">About</a></li>
+	      <li><a href="/">Home</a></li>
+	      <li class="clear"></li>
+	    </ul>
+	  </div>
+	  <div id="title">Beaches of Oregon Coast</div>
+		<h2 class="search_result">
+			<div id='redText'>You searched for:  {{query}}</div>
 		</h2>
-
 				<main class="twit-container" >
+
 					{% for Access_Name, County, Type, Location in results %}
 					<article class="twit" >
 						<form method="get" action="{{ url_for('detial') }}">
@@ -30,7 +38,7 @@
 							<p class="twit-text">
 								Location: {{Location}}
 							</p>
-							<input type="submit" value="More" />
+							<input class="morebt" type="submit" value="More" />
 				</div>
 			</form>
 			</article>

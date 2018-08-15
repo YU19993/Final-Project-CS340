@@ -1,0 +1,25 @@
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Oregon Beaches</title>
+		<link rel="stylesheet" href= "{{ url_for('static',filename='styles/main.css') }}">
+</head>
+<body>
+  <div id="header">
+    <ul>
+      <li><a href="/contact/">Contact</a></li>
+      <li><a href="/about/">About</a></li>
+      <li><a href="/">Home</a></li>
+      <li class="clear"></li>
+    </ul>
+  </div>
+  <div id="title">Beaches of Oregon Coast</div>
+  <div class="notfd">
+  <p >The search result is not found.</p>
+  <form method="post" action="{{ url_for('index') }}">
+    <input type="submit" value="Return" />
+  </div>
+  </form>
+</body>
+</html>>

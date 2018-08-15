@@ -20,9 +20,9 @@ a {
   margin: 2px;
   padding: 20px;
   border: 1px solid #dadada;
-  border-radius: 2px;
-  background-color: #fff;
-  width: 300px;
+  border-radius: 30px;
+  background-color: #f2f2ea;
+  width: 100px;
   height: 100px;
 }
 
@@ -31,6 +31,7 @@ a {
 }
 
 .twit-content {
+  border-left: 50px;
   flex: 1 1 80%;
   margin-left: 10px;
 }
@@ -43,4 +44,157 @@ a {
   margin-top: 8px;
   text-align: right;
   font-weight: bold;
+}
+
+body {
+	width: 90%;
+	margin:auto;
+	background: url("https://atlantisbahamas.com/media/Things%20To%20Do/Water%20Park/Beaches/Hero/Experiences_Beach.jpg") repeat scroll top;
+}
+
+ul {
+	padding:0;
+	margin:0;
+	height:2em;
+}
+
+.clear {
+	clear:both;
+}
+
+.border {
+	border:1px solid #ccc;
+}
+
+.border.underline {
+	border-width:0 0 1px 0;
+}
+
+.box {
+	margin:auto;
+	padding:6px;
+}
+
+#header {
+	background:#00FFFF;
+}
+
+#header ul {
+	list-style:none;
+}
+
+#header ul li {
+	color:#ff7ee0ff;
+	padding:5px 20px;
+	float:right;
+}
+
+#title {
+	color:#ff7ee0ff;
+	font-size:50px;
+	font-weight: bold;
+  background-color: #d6e8f9;
+
+
+}
+
+h2.search_result {
+  margin: 50px 10%;
+}
+
+.notfd{
+  padding-left: 30px;
+  padding-top: 20px;
+  height: 100px;
+  background-color: #f2f0ef;
+}
+
+input.morebt{
+  margin-top: 10px;
+  margin-left: : 100px;
+  border-left: 50px;
+}
+#menu {
+	background:#ff7ee0ff;
+	margin:10px 0;
+	list-style:none;
+}
+
+#menu li {
+	padding:5px 20px;
+	float:left;
+}
+
+#article {
+	background:#fff;
+}
+
+#article .title1 {
+	color:#ff7ee0ff;
+	font-size:22px;
+	font-weight:bold;
+}
+
+#article .title2 {
+	color:#ff7ee0ff;
+	font-size:15px;
+	padding:10px 0;
+}
+
+#article .logo {
+	float:left;
+}
+
+#article .introduction {
+	width:550px;
+	float: right;
+}
+
+#article .introduction .information {
+	word-wrap:break-word;
+}
+
+#article .introduction table td:first-child{
+	font-weight:bold;
+}
+
+#article .introduction input {
+	width:250px;
+	height:35px;
+	color:#00f;
+	font-weight:bold;
+}
+
+#article .title {
+	margin: 5px 0 0 0;
+	font-weight:bold;
+}
+
+#footer {
+	background:#ffffff;
+	text-align:center;
+	color:#999;
+	font-size:12px;
+	padding:8px 0;
+	margin: 10px 0 100px 0;
+}
+
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(even) {
+    background-color: #cadbf7;
+}
+
+tr:nth-child(odd) {
+    background-color: #f2f4f7;
 }
